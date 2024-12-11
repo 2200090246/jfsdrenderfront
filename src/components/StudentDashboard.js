@@ -36,14 +36,14 @@ const StudentDashboard = () => {
     setError(null);
     try {
       const storedUsername = localStorage.getItem("username");
-      const response = await axios.get(`https://gentle-paprenjak-f8e60c.netlify.app/api/auth/users/${storedUsername}`);
+      const response = await axios.get(`https://springbootsdpbackend.up.railway.app/api/auth/users/${storedUsername}`);
   
       if (response.data) {
         // Log the profile image URL to ensure it's present
         console.log("Profile Image URL:", response.data.profileImage);
   
         // If profileImage is a relative path, prepend the base URL
-        const imageUrl = response.data.profileImage ? `https://gentle-paprenjak-f8e60c.netlify.app${response.data.profileImage}` : null;
+        const imageUrl = response.data.profileImage ? `https://springbootsdpbackend.up.railway.app${response.data.profileImage}` : null;
         
         // Directly set profile image from console log URL for testing
         setProfileImageUrl("https://res.cloudinary.com/dlggacuga/image/upload/v1733580548/linkedin_profille_o8u9l4.jpg");
